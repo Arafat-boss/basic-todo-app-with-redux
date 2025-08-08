@@ -40,4 +40,5 @@ const userSlice = createSlice({
 export const selectUsers = (state: RootState)=> state.user.users;
 // export const selectUsers = (state: RootState) => state.user.users;
 export const { addUser, removedUser } = userSlice.actions;
+// Action creators are generated for each case reducer function
 export default userSlice.reducer;
