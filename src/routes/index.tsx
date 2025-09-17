@@ -14,7 +14,8 @@ const router = createBrowserRouter([
                 Component: User,
             },
             {
-                path:"tasks",
+                index: true,
+                // path:"tasks",
                 Component: Taska,
             },
         ]
