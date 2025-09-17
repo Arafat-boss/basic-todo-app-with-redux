@@ -10,11 +10,11 @@ const router = createBrowserRouter([
         Component: App,
         children:[
             {
-                path:"user",
+                path:"users",
                 Component: User,
             },
             {
-                path:"task",
+                path:"tasks",
                 Component: Taska,
             },
         ]
