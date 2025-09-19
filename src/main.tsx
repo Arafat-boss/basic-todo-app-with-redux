@@ -10,7 +10,7 @@ import { ThemeProvider } from "./Providers/theme-provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark"  storageKey="vite-ui-theme">
       <Provider store={store}>
         <RouterProvider router={router}></RouterProvider>
       </Provider>
