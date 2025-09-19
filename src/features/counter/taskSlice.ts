@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    tasks:{
+    tasks:[
+        {
         id:0,
         title:"fbvzdf ",
         description:" zzzzzzzzzzzzzzzzzzzz",
@@ -10,6 +11,7 @@ const initialState = {
         isCompleted:false,
         priority: "High",
     }
+    ]
 };
 
 // Define the initial state using that type
