@@ -12,6 +12,7 @@ export default function Navbar() {
 
       <Link to="/tasks">Tasks</Link>
       <Link to="/users">Users</Link>
+      <Link to="/users">Create Users</Link>
     </nav>
   );
 }
