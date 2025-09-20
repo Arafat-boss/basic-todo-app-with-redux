@@ -1,3 +1,4 @@
+import TaskCard from "@/components/layout/TaskCard";
 import { selectFillteredTasks, selectTasks } from "@/features/counter/taskSlice";
 import { useAppSelector } from "@/redux/hook";
 
@@ -11,6 +12,10 @@ export default function Taska() {
 
 
   return (
-    <div>Taska</div>
+    <div>
+      <TaskCard></TaskCard>
+
+
+    </div>
   )
 }
