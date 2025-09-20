@@ -15,16 +15,16 @@ const initialState : InisialTaskState = {
     tasks:[
         {
         id:0,
-        title:"fbvzdf ",
-        description:" zzzzzzzzzzzzzzzzzzzz",
+        title:"Initialize Forntend Project",
+        description:"Create a new React project using Vite and set up the initial file structure. Install necessary dependencies such as React Router for routing and Redux Toolkit for state management. Set up a GitHub repository to host the project code.",
         dueDate:"2025-06-20",
         isCompleted:false,
         priority: "High",
     },
         {
         id:0,
-        title:"Arafat ",
-        description:" zzzzzzzzzzzzzzzzzzzz",
+        title:"GitHub Repository",
+        description:"Create a new repository on GitHub to host the project code and push the initial commit. Updated description here. Adding more details to the task description. This task involves setting up the repository with a README file, .gitignore, and any necessary licenses.",
         dueDate:"2025-06-20",
         isCompleted:false,
         priority: "High",
