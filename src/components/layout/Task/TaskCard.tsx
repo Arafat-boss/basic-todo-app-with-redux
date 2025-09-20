@@ -1,8 +1,8 @@
 
 // import { Checkbox } from "@/components/vi/checkbox";
 import { Trash2 } from "lucide-react";
-import { Button } from "../ui/button";
-import { Checkbox } from "../ui/checkbox";
+import { Button } from "../../ui/button";
+import { Checkbox } from "../../ui/checkbox";
 import type { ITask } from "@/types";
 import { cn } from "@/lib/utils";
 

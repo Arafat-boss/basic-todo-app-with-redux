@@ -1,4 +1,4 @@
-import TaskCard from "@/components/layout/TaskCard";
+import TaskCard from "@/components/layout/Task/TaskCard";
 import { selectFillteredTasks, selectTasks } from "@/features/counter/taskSlice";
 import { useAppSelector } from "@/redux/hook";
 
