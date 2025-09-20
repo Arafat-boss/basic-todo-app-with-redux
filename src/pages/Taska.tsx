@@ -1,4 +1,4 @@
-import { useAppSelector } from '@/redux/'
+import { useAppSelector } from "@/redux/hook";
 
 export default function Taska() {
 
