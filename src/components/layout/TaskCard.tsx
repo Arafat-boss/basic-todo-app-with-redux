@@ -3,14 +3,20 @@
 import { Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
+import type { ITask } from "@/types";
 
-export default function TaskCard() {
+interface IProps{
+  task?:ITask
+}
+
+
+export default function TaskCard({task}: IProps) {
   return (
     <div className="border px-5 py-3 rounded-md">
       <div className="flex justify-between items-center">
         <div className="flex gap-2 items-center">
           <div className="size-3 rounded-full bg-green-500"></div>
-          <h1 className="font-semibold">Task Title</h1>
+          <h1 className="font-semibold">{task?.title}</h1>
         </div>
         <div className="flex gap-3 items-center">
           <Button variant="link" className="p-0 text-red-500">

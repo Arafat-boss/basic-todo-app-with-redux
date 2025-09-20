@@ -13,8 +13,9 @@ export default function Taska() {
 
   return (
     <div>
-      <TaskCard></TaskCard>
-
+    {
+      todo.map((task)=><TaskCard key={task.id} task={task}></TaskCard>)
+    }
 
     </div>
   )
