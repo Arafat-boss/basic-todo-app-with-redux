@@ -10,6 +10,14 @@ const initialState = {
         dueDate:"2025-06-20",
         isCompleted:false,
         priority: "High",
+    },
+        {
+        id:0,
+        title:"Arafat ",
+        description:" zzzzzzzzzzzzzzzzzzzz",
+        dueDate:"2025-06-20",
+        isCompleted:false,
+        priority: "High",
     }
     ]
 };
