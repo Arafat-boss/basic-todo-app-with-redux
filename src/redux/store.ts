@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import taskReducer from '../features/counter/taskSlice'
 
+// Create and configure the Redux store
 export const store = configureStore({
   reducer: {
     todo : taskReducer,

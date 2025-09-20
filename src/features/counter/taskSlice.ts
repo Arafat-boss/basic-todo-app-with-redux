@@ -3,10 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "@/redux/store";
 
 
+// Define a type for the slice state
 interface InisialTaskState {
     tasks: ITask[];
+    fillteredTasks: "All" | "Completed" | "Uncompleted";
 }
 
+
+// Define the initial state using that type
 const initialState : InisialTaskState = {
     tasks:[
         {
@@ -25,7 +29,8 @@ const initialState : InisialTaskState = {
         isCompleted:false,
         priority: "High",
     }
-    ]
+    ],
+    fillteredTasks:"All",
 };
 
 // Define the initial state using that type
@@ -38,6 +43,10 @@ const taskSlice = createSlice({
 // Selector
 export const selectTasks =(state: RootState) => {
     return state.todo.tasks;
+}
+
+export const selectFillteredTasks =(state: RootState) => {
+    return state.todo.fillteredTasks;
 }
 
 
