@@ -4,6 +4,7 @@ import { Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 import type { ITask } from "@/types";
+import { cn } from "@/lib/utils";
 
 interface IProps{
   task?:ITask
@@ -15,7 +16,11 @@ export default function TaskCard({task}: IProps) {
     <div className="border px-5 py-3 rounded-md mt-4">
       <div className="flex justify-between items-center">
         <div className="flex gap-2 items-center">
-          <div className="size-3 rounded-full bg-green-500"></div>
+          <div className={cn("size-3 rounded-full",{
+            "bg-red-500": task?.priority === "High",
+            "bg-yellow-500": task?.priority === "Medium",
+            "bg-green-500": task?.priority === "Low", 
+          })}></div>
           <h1 className="font-semibold">{task?.title}</h1>
         </div>
         <div className="flex gap-3 items-center">
