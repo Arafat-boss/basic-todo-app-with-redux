@@ -35,9 +35,12 @@ const taskSlice = createSlice({
     reducers: {}
 });
 
+// Selector
 export const selectTasks =(state: RootState) => {
     return state.todo.tasks;
 }
 
 
+// Action creators are generated for each case reducer function
+// export const {  } = taskSlice.actions;
 export default taskSlice.reducer; 
