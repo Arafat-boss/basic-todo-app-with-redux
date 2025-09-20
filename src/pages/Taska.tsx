@@ -3,7 +3,7 @@ import { useAppSelector } from "@/redux/hook";
 
 export default function Taska() {
 
-  // const {} = useAppSelector((state) => state.todo.tasks)
+  // Access the Redux state using the custom hook
   const todo = useAppSelector(selectTasks);
   const filltered = useAppSelector(selectFillteredTasks);
   console.log(todo);
