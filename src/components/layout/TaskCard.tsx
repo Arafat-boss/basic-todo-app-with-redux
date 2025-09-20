@@ -2,6 +2,7 @@
 // import { Checkbox } from "@/components/vi/checkbox";
 import { Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
 
 export default function TaskCard() {
   return (
@@ -15,7 +16,7 @@ export default function TaskCard() {
           <Button variant="link" className="p-0 text-red-500">
             <Trash2 size={16} />
           </Button>
-          {/* <Checkbox /> */}
+          <Checkbox />
         </div>
       </div>
       <p className="mt-5">Task Description</p>

@@ -6,7 +6,7 @@ function App() {
     <>    
       <Navbar />
 
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="container mx-auto mt-10">
         <Outlet />
       </div>
     </>
