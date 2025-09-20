@@ -12,7 +12,7 @@ interface IProps{
 
 export default function TaskCard({task}: IProps) {
   return (
-    <div className="border px-5 py-3 rounded-md">
+    <div className="border px-5 py-3 rounded-md mt-4">
       <div className="flex justify-between items-center">
         <div className="flex gap-2 items-center">
           <div className="size-3 rounded-full bg-green-500"></div>
