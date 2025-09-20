@@ -25,7 +25,7 @@ export default function TaskCard({task}: IProps) {
           <Checkbox />
         </div>
       </div>
-      <p className="mt-5">Task Description</p>
+      <p className="mt-5">{task?.description}</p>
       {/* Enter picture */}
     </div>
   );
