@@ -16,16 +16,18 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 
 export function AddTaskModal() {
   const form = useForm({
     defaultValues: {
       title: "",
+      description: "",
     },
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: any) => {
     console.log(data);
   };
 
@@ -49,7 +51,7 @@ export function AddTaskModal() {
                 <FormItem>
                   <FormLabel>Task Title</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter task" {...field} />
+                    <Input placeholder="Enter task" {...field} value={field.value|| ""} />
                   </FormControl>
                 </FormItem>
               )}
@@ -60,9 +62,9 @@ export function AddTaskModal() {
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Task Title</FormLabel>
+                  <FormLabel>Task Description</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter task" {...field} />
+                    <Textarea placeholder="Enter task" {...field} value={field.value|| ""}/>
                   </FormControl>
                 </FormItem>
               )}
