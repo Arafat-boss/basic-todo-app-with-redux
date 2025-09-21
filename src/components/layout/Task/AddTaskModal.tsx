@@ -55,6 +55,19 @@ export function AddTaskModal() {
               )}
             />
 
+            <FormField
+              control={form.control}
+              name="description"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Task Title</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter task" {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+
             <DialogFooter>
               <DialogClose asChild>
                 <Button variant="outline">Cancel</Button>

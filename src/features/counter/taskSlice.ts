@@ -21,7 +21,7 @@ const initialState: InisialTaskState = {
       priority: "High",
     },
     {
-      id: 0,
+      id: 1,
       title: "GitHub Repository",
       description:
         "Create a new repository on GitHub to host the project code and push the initial commit. Updated description here. Adding more details to the task description. This task involves setting up the repository with a README file, .gitignore, and any necessary licenses.",
@@ -30,7 +30,7 @@ const initialState: InisialTaskState = {
       priority: "Medium",
     },
     {
-      id: 0,
+      id: 2,
       title: "GitHub Repository",
       description:
         "Create a new repository on GitHub to host the project code and push the initial commit. Updated description here. Adding more details to the task description. This task involves setting up the repository with a README file, .gitignore, and any necessary licenses.",
@@ -39,7 +39,7 @@ const initialState: InisialTaskState = {
       priority: "Low",
     },
     {
-      id: 0,
+      id: 3,
       title: "GitHub Repository",
       description:
         "Create a new repository on GitHub to host the project code and push the initial commit. Updated description here. Adding more details to the task description. This task involves setting up the repository with a README file, .gitignore, and any necessary licenses.",
