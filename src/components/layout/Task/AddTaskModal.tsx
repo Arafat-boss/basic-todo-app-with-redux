@@ -42,28 +42,19 @@ import { useAppDispatch } from "@/redux/hook";
 import { addTask } from "@/features/counter/taskSlice";
 
 export function AddTaskModal() {
-  const form = useForm({
-    defaultValues: {
-      title: "",
-      description: "",
-      priority: "",
-      dueDate: undefined,
-    },
-  });
+  // React Hook Form
+  const form = useForm();
 
+  // Redux Dispatch
   const dispatch = useAppDispatch();
 
+  // Form Submit Handler
   const onSubmit = (data) => {
     console.log(data);
-    dispatch(addTask(data))
+    dispatch(addTask(data));
   };
 
-
-
-
-
-
-
+  // JSX
   return (
     <Dialog>
       <DialogTrigger asChild>
