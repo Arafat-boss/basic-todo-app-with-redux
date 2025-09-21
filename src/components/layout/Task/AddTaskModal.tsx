@@ -38,6 +38,8 @@ import {
 } from "@/components/ui/popover";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
+import { useAppDispatch } from "@/redux/hook";
+import { addTask } from "@/features/counter/taskSlice";
 
 export function AddTaskModal() {
   const form = useForm({
@@ -49,9 +51,18 @@ export function AddTaskModal() {
     },
   });
 
-  const onSubmit = (data: any) => {
+  const dispatch = useAppDispatch();
+
+  const onSubmit = (data) => {
     console.log(data);
+    dispatch(addTask(data))
   };
+
+
+
+
+
+
 
   return (
     <Dialog>

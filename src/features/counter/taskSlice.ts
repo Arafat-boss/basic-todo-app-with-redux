@@ -1,6 +1,9 @@
 import type { ITask } from "@/types";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "@/redux/store";
+// import { p } from "node_modules/react-router/dist/development/index-react-server-client-BeVfPpWg.d.mts";
+// import { is } from "date-fns/locale";
+import { v4 as uuidv4 } from 'uuid';
 
 // Define a type for the slice state
 interface InisialTaskState {
@@ -10,44 +13,7 @@ interface InisialTaskState {
 
 // Define the initial state using that type
 const initialState: InisialTaskState = {
-  tasks: [
-    {
-      id: 0,
-      title: "Initialize Forntend Project",
-      description:
-        "Create a new React project using Vite and set up the initial file structure. Install necessary dependencies such as React Router for routing and Redux Toolkit for state management. Set up a GitHub repository to host the project code.",
-      dueDate: "2025-06-20",
-      isCompleted: false,
-      priority: "High",
-    },
-    {
-      id: 1,
-      title: "GitHub Repository",
-      description:
-        "Create a new repository on GitHub to host the project code and push the initial commit. Updated description here. Adding more details to the task description. This task involves setting up the repository with a README file, .gitignore, and any necessary licenses.",
-      dueDate: "2025-06-20",
-      isCompleted: false,
-      priority: "Medium",
-    },
-    {
-      id: 2,
-      title: "GitHub Repository",
-      description:
-        "Create a new repository on GitHub to host the project code and push the initial commit. Updated description here. Adding more details to the task description. This task involves setting up the repository with a README file, .gitignore, and any necessary licenses.",
-      dueDate: "2025-06-20",
-      isCompleted: false,
-      priority: "Low",
-    },
-    {
-      id: 3,
-      title: "GitHub Repository",
-      description:
-        "Create a new repository on GitHub to host the project code and push the initial commit. Updated description here. Adding more details to the task description. This task involves setting up the repository with a README file, .gitignore, and any necessary licenses.",
-      dueDate: "2025-06-20",
-      isCompleted: false,
-      priority: "High",
-    },
-  ],
+  tasks: [],
   fillteredTasks: "All",
 };
 
@@ -55,7 +21,20 @@ const initialState: InisialTaskState = {
 const taskSlice = createSlice({
   name: "task",
   initialState,
-  reducers: {},
+  reducers: {
+    addTask: (state, action: PayloadAction<ITask>) => {
+
+      const id =uuidv4();
+      
+      const taskData ={
+        ...action.payload,
+        id,
+        isCompleted: false,
+      }
+
+      state.tasks.push(taskData);
+    }
+  },
 });
 
 // Selector
@@ -66,6 +45,8 @@ export const selectTasks = (state: RootState) => {
 export const selectFillteredTasks = (state: RootState) => {
   return state.todo.fillteredTasks;
 };
+
+export const { addTask } = taskSlice.actions;
 
 // Action creators are generated for each case reducer function
 // export const {  } = taskSlice.actions;
