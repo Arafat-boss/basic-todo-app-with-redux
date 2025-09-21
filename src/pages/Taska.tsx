@@ -15,8 +15,10 @@ export default function Taska() {
 
   return (
     <div>
-      <h1>TAsk</h1>
+     <div className="flex justify-between items-center">
+       <h1>Task</h1>
       <AddTaskModal></AddTaskModal>
+     </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5">
         {todo.map((task) => (
           <TaskCard key={task.id} task={task}></TaskCard>

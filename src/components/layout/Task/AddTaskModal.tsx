@@ -17,11 +17,11 @@ export function AddTaskModal() {
     <Dialog>
       <form>
         <DialogTrigger asChild>
-          <Button variant="outline">Open Dialog</Button>
+          <Button variant="outline">Add Task</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>Add Tasks</DialogTitle>
             <DialogDescription>
               Make changes to your profile here. Click save when you&apos;re
               done.
