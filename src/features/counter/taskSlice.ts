@@ -56,19 +56,19 @@ const taskSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, action: PayloadAction<ITask>) => {
-
       const id =uuidv4();
-      
       const taskData ={
         ...action.payload,
         id,
         isCompleted: false,
       }
-
       state.tasks.push(taskData);
-    }
-  },
-});
+    },
+
+    toggleComoletedState: (state, action: PayloadAction<string>)=>{
+      state.tasks.forEach((task)=>task.id === action.payload ? task.isCompleted = !task.isCompleted : task)
+  }
+}});
 
 // Selector
 export const selectTasks = (state: RootState) => {

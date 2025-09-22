@@ -1,7 +1,7 @@
 import { AddTaskModal } from "@/components/layout/Task/AddTaskModal";
 import TaskCard from "@/components/layout/Task/TaskCard";
 import {
-  selectFillteredTasks,
+  // selectFillteredTasks,
   selectTasks,
 } from "@/features/counter/taskSlice";
 import { useAppSelector } from "@/redux/hook";
@@ -9,9 +9,9 @@ import { useAppSelector } from "@/redux/hook";
 export default function Taska() {
   // Access the Redux state using the custom hook
   const todo = useAppSelector(selectTasks);
-  const filltered = useAppSelector(selectFillteredTasks);
-  console.log(todo);
-  console.log(filltered);
+  // const filltered = useAppSelector(selectFillteredTasks);
+  // console.log(todo);
+  // console.log(filltered);
 
   return (
     <div>
