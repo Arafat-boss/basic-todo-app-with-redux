@@ -79,7 +79,7 @@ export const selectFillteredTasks = (state: RootState) => {
   return state.todo.fillteredTasks;
 };
 
-export const { addTask } = taskSlice.actions;
+export const { addTask, toggleComoletedState } = taskSlice.actions;
 
 // Action creators are generated for each case reducer function
 // export const {  } = taskSlice.actions;

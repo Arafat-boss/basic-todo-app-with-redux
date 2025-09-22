@@ -5,6 +5,8 @@ import { Button } from "../../ui/button";
 import { Checkbox } from "../../ui/checkbox";
 import type { ITask } from "@/types";
 import { cn } from "@/lib/utils";
+import { toggleComoletedState } from "@/features/counter/taskSlice";
+import { useDispatch } from "react-redux";
 
 interface IProps{
   task?:ITask
@@ -12,6 +14,9 @@ interface IProps{
 
 
 export default function TaskCard({task}: IProps) {
+
+  const dispatch = useDispatch();
+
   return (
     <div className="border px-5 py-3 rounded-md mt-4">
       <div className="flex justify-between items-center">
@@ -27,7 +32,7 @@ export default function TaskCard({task}: IProps) {
           <Button variant="link" className="p-0 text-red-500">
             <Trash2 size={16} />
           </Button>
-          <Checkbox />
+          <Checkbox onClick={()=> dispatch(toggleComoletedState(task.id))} />
         </div>
       </div>
       <p className="mt-5">{task?.description}</p>
