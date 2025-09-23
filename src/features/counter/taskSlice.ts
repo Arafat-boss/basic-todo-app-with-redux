@@ -74,8 +74,15 @@ const taskSlice = createSlice({
     },
 
     toggleComoletedState: (state, action: PayloadAction<string>)=>{
-      state.tasks.forEach((task)=>task.id === action.payload ? task.isCompleted = !task.isCompleted : task)
-  }
+      state.tasks.forEach((task)=>
+        task.id === action.payload ?
+         task.isCompleted = !task.isCompleted : task)
+  },
+    deleteTask: (state, action: PayloadAction<string>)=>{
+      state.tasks = state.tasks.filter((task)=>
+         task.id !== action.payload
+      )
+    }
 }});
 
 // Selector
@@ -87,7 +94,7 @@ export const selectFillteredTasks = (state: RootState) => {
   return state.todo.fillteredTasks;
 };
 
-export const { addTask, toggleComoletedState } = taskSlice.actions;
+export const { addTask, toggleComoletedState, deleteTask } = taskSlice.actions;
 
 // Action creators are generated for each case reducer function
 // export const {  } = taskSlice.actions;
