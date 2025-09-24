@@ -27,8 +27,10 @@ export default function TaskCard({task}: IProps) {
             "bg-green-500": task?.priority === "low", 
           })}></div>
           <h1 className={cn({"line-through": task?.isCompleted})}>{task?.title}</h1>
+         
         </div>
         <div className="flex gap-3 items-center">
+           <p>{task?.dueDate}</p>
           <Button onClick={()=> dispatch(deleteTask(task.id))} variant="link" className="p-0 text-red-500">
             <Trash2 size={16} />
           </Button>

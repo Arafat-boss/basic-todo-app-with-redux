@@ -18,7 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { DialogDescription } from "@radix-ui/react-dialog";
-import { useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 
 import {
   Select,
@@ -40,6 +40,7 @@ import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { useAppDispatch } from "@/redux/hook";
 import { addTask } from "@/features/counter/taskSlice";
+import type { ITask } from "@/types";
 
 export function AddTaskModal() {
   // React Hook Form
@@ -49,9 +50,14 @@ export function AddTaskModal() {
   const dispatch = useAppDispatch();
 
   // Form Submit Handler
-  const onSubmit = (data) => {
-    console.log(data);
-    dispatch(addTask(data));
+  const onSubmit: SubmitHandler<ITask> = (data) => {
+    const payload: ITask = {
+      ...data,
+      // Date কে string বানিয়ে redux এ পাঠাচ্ছি
+      dueDate: data.dueDate ? new Date(data.dueDate).toISOString() : null,
+    };
+    console.log(payload);
+    dispatch(addTask(payload));
   };
 
   // JSX
@@ -151,7 +157,8 @@ export function AddTaskModal() {
                           }`}
                         >
                           {field.value ? (
-                            format(field.value, "PPP")
+                            // safe format
+                            format(new Date(field.value), "PPP")
                           ) : (
                             <span>Pick a date</span>
                           )}
@@ -162,7 +169,9 @@ export function AddTaskModal() {
                     <PopoverContent className="w-auto p-0" align="start">
                       <Calendar
                         mode="single"
-                        selected={field.value}
+                        selected={
+                          field.value ? new Date(field.value) : undefined
+                        }
                         onSelect={field.onChange}
                         initialFocus
                       />
