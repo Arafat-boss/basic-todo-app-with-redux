@@ -47,6 +47,14 @@ const initialState: InisialTaskState = {
     dueDate: "2025-02-02T10:30:00.000Z",
   },
   {
+    id: "LsckF__GHp9tr_y8eO2cD12",
+    isCompleted: true,
+    title: "extra Team meeting",
+    description: "Weekly sync-up with the development team",
+    priority: "low",
+    dueDate: "2025-02-02T10:30:00.000Z",
+  },
+  {
     id: "ZxQ__MNk7pw_t4dR6fH93",
     isCompleted: false,
     title: "Fix UI bugs",
