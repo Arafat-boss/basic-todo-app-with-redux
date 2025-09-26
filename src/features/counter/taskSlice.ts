@@ -89,6 +89,7 @@ const taskSlice = createSlice({
       state.tasks.push(taskData);
     },
 
+    // toggle task completed state
     toggleComoletedState: (state, action: PayloadAction<string>)=>{
       state.tasks.forEach((task)=>
         task.id === action.payload ?
