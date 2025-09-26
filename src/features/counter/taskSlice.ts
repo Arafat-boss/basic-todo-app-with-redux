@@ -23,6 +23,14 @@ const initialState: InisialTaskState = {
     dueDate: "2025-01-14T18:00:00.800Z",
   },
       {
+    id: "PmR__HBorteyh4hq_x9eI4bE30",
+    isCompleted: false,
+    title: "NodeJS Complete project proposal",
+    description: "Write and submit the project proposal for the new client",
+    priority: "medium",
+    dueDate: "2025-01-14T18:00:00.800Z",
+  },
+      {
     id: "PmR__dsHBo4hq_x9eI4bE30",
     isCompleted: false,
     title: "PHP Complete project proposal",
