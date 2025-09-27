@@ -1,4 +1,4 @@
-import type { ITask } from "@/types";
+import type { ITask, Priority } from "@/types";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "@/redux/store";
 // import { p } from "node_modules/react-router/dist/development/index-react-server-client-BeVfPpWg.d.mts";
@@ -95,10 +95,15 @@ const taskSlice = createSlice({
         task.id === action.payload ?
          task.isCompleted = !task.isCompleted : task)
   },
+    // delete task
     deleteTask: (state, action: PayloadAction<string>)=>{
       state.tasks = state.tasks.filter((task)=>
          task.id !== action.payload
       )
+    },
+    // filter tasks
+    filter: (state, action: PayloadAction<Priority>)=>{
+        state.f
     }
 }});
 

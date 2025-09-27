@@ -7,3 +7,7 @@ export interface ITask  {
         isCompleted:boolean,
         priority: "low" | "medium" | "high",
 }
+
+export interface Priority {
+        priority: "low" | "medium" | "high",
+}
