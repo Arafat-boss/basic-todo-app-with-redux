@@ -11,6 +11,7 @@ const initialState = {
     users: [] as IUser[],
 };
 
+type DraftUser =  Pick<IUser, 'name' >;
 
 const userSlice = createSlice({
   name: "user",
