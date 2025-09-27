@@ -112,7 +112,9 @@ const taskSlice = createSlice({
 
 // Selector
 export const selectTasks = (state: RootState) => {
+  // return state.todo.tasks;
   const filter = state.todo.fillteredTasks;
+  // console.log(filter);
   if(filter === "low"){
     return state.todo.tasks.filter((task)=> task.priority === "low");
   }
@@ -123,6 +125,7 @@ export const selectTasks = (state: RootState) => {
   }
   return state.todo.tasks;
 };
+
 
 export const selectFillteredTasks = (state: RootState) => {
   return state.todo.fillteredTasks;
