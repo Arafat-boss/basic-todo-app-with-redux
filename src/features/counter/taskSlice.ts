@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 // Define a type for the slice state
 interface InisialTaskState {
   tasks: ITask[];
-  fillteredTasks: "All" | "Completed" | "Uncompleted";
+  fillteredTasks:"low" | "medium" | "high" | "All";
 }
 
 // Define the initial state using that type
@@ -102,8 +102,8 @@ const taskSlice = createSlice({
       )
     },
     // filter tasks
-    filter: (state, action: PayloadAction<Priority>)=>{
-        state.f
+    filter: (state, action: PayloadAction<"low" | "medium" | "high">)=>{
+        state.fillteredTasks = action.payload;
     }
 }});
 
