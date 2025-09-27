@@ -1,5 +1,6 @@
 import { AddTaskModal } from "@/components/layout/Task/AddTaskModal";
 import TaskCard from "@/components/layout/Task/TaskCard";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   // selectFillteredTasks,
   selectTasks,
@@ -17,6 +18,12 @@ export default function Taska() {
     <div>
      <div className="flex justify-between items-center">
        <h1>Task</h1>
+       <Tabs>
+         <TabsList>
+          <TabsTrigger value="account">Account</TabsTrigger>
+          <TabsTrigger value="password">Password</TabsTrigger>
+        </TabsList>
+       </Tabs>
       <AddTaskModal></AddTaskModal>
      </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5">
