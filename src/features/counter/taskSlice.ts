@@ -4,11 +4,14 @@ import type { RootState } from "@/redux/store";
 // import { p } from "node_modules/react-router/dist/development/index-react-server-client-BeVfPpWg.d.mts";
 // import { is } from "date-fns/locale";
 import { v4 as uuidv4 } from 'uuid';
+import { el } from "date-fns/locale";
 
 // Define a type for the slice state
 interface InisialTaskState {
   tasks: ITask[];
-  fillteredTasks:"low" | "medium" | "high" | "All";
+
+  // fillteredTasks:"all";
+   fillteredTasks: "all" | "low" | "medium" | "high";
 }
 
 // Define the initial state using that type
@@ -71,7 +74,7 @@ const initialState: InisialTaskState = {
     dueDate: "2025-02-10T09:00:00.000Z",
   },
   ],
-  fillteredTasks: "All",
+  fillteredTasks: "all",
 };
 
 // Define the initial state using that type
@@ -102,13 +105,22 @@ const taskSlice = createSlice({
       )
     },
     // filter tasks
-    filter: (state, action: PayloadAction<"low" | "medium" | "high">)=>{
+    updateFilter: (state, action: PayloadAction<"all" | "low" | "medium" | "high">)=>{
         state.fillteredTasks = action.payload;
     }
 }});
 
 // Selector
 export const selectTasks = (state: RootState) => {
+  const filter = state.todo.fillteredTasks;
+  if(filter === "low"){
+    return state.todo.tasks.filter((task)=> task.priority === "low");
+  }
+  else if(filter === "medium"){
+    return state.todo.tasks.filter((task)=> task.priority === "medium");
+  }else if(filter === "high"){
+    return state.todo.tasks.filter((task)=> task.priority === "high");
+  }
   return state.todo.tasks;
 };
 
@@ -116,7 +128,7 @@ export const selectFillteredTasks = (state: RootState) => {
   return state.todo.fillteredTasks;
 };
 
-export const { addTask, toggleComoletedState, deleteTask } = taskSlice.actions;
+export const { addTask, toggleComoletedState, deleteTask, updateFilter } = taskSlice.actions;
 
 // Action creators are generated for each case reducer function
 // export const {  } = taskSlice.actions;

@@ -4,26 +4,28 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   // selectFillteredTasks,
   selectTasks,
+  updateFilter,
 } from "@/features/counter/taskSlice";
-import { useAppSelector } from "@/redux/hook";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 
 export default function Taska() {
   // Access the Redux state using the custom hook
   const todo = useAppSelector(selectTasks);
+  const dispatch = useAppDispatch();
   // const filltered = useAppSelector(selectFillteredTasks);
   // console.log(todo);
   // console.log(filltered);
 
   return (
     <div>
-     <div className="flex justify-between items-center">
-       <h1>Task</h1>
+     <div className="flex justify-end items-center gap-5">
+       <h1 className="mr-auto">Task</h1>
        <Tabs defaultValue="all" className="w-1/2">
          <TabsList>
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="low">Low</TabsTrigger>
-          <TabsTrigger value="mediam">Medism</TabsTrigger>
-          <TabsTrigger value="high">High</TabsTrigger>
+          <TabsTrigger onClick={()=>dispatch(updateFilter("all"))} className="grid w-full grid-cols" value="all">All</TabsTrigger>
+          <TabsTrigger onClick={()=>dispatch(updateFilter("low"))} value="low">Low</TabsTrigger>
+          <TabsTrigger onClick={()=>dispatch(updateFilter("medium"))} value="medium">Medium</TabsTrigger>
+          <TabsTrigger onClick={()=>dispatch(updateFilter("high"))} value="high">High</TabsTrigger>
         </TabsList>
        </Tabs>
       <AddTaskModal></AddTaskModal>
