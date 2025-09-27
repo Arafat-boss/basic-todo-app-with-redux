@@ -2,6 +2,7 @@ import { Trash2 } from "lucide-react";
 import { Button } from "../../ui/button";
 import { Checkbox } from "../../ui/checkbox";
 import { useDispatch } from "react-redux";
+import { removedUser } from "@/features/counter/userSlice";
 // import { deleteUser, toggleUserActive } from "@/features/counter/userSlice"; // user slice
 
 interface IUser {
@@ -26,7 +27,7 @@ export default function UserCard({ user }: IProps) {
         </div>
         <div className="flex gap-3 items-center">
           <Button 
-            // onClick={() => dispatch(deleteUser(user.id))} 
+            onClick={() => dispatch(removedUser(user.id))} 
             variant="link" 
             className="p-0 text-red-500"
           >
