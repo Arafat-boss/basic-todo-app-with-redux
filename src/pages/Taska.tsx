@@ -18,10 +18,12 @@ export default function Taska() {
     <div>
      <div className="flex justify-between items-center">
        <h1>Task</h1>
-       <Tabs>
+       <Tabs defaultValue="all" className="w-1/2">
          <TabsList>
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
+          <TabsTrigger value="all">All</TabsTrigger>
+          <TabsTrigger value="low">Low</TabsTrigger>
+          <TabsTrigger value="mediam">Medism</TabsTrigger>
+          <TabsTrigger value="high">High</TabsTrigger>
         </TabsList>
        </Tabs>
       <AddTaskModal></AddTaskModal>
