@@ -36,7 +36,7 @@ export default function TaskCard({task}: IProps) {
           </Button>
           <Checkbox onClick={()=> dispatch(toggleComoletedState(task.id))} />
         </div>
-      </div>
+      </div> 
       <p className="mt-5">{task?.description}</p>
       {/* Enter picture */}
     </div>

@@ -6,6 +6,7 @@ export interface ITask  {
         dueDate:string,
         isCompleted:boolean,
         priority: "low" | "medium" | "high",
+        assignTo?: string | null,
 }
 
 export interface Priority {
