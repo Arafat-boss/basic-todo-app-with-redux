@@ -129,6 +129,7 @@ export const selectTasks = (state: RootState) => {
 };
 
 
+// Selector for filltered tasks
 export const selectFillteredTasks = (state: RootState) => {
   return state.todo.fillteredTasks;
 };
