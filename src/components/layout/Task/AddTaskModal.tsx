@@ -41,14 +41,14 @@ import { format } from "date-fns";
 import { useAppDispatch } from "@/redux/hook";
 import { addTask } from "@/features/counter/taskSlice";
 import type { ITask } from "@/types";
+import { useState } from "react";
 
 export function AddTaskModal() {
+  const [open, setOpen] = useState(false);
   // React Hook Form
   const form = useForm();
-
   // Redux Dispatch
   const dispatch = useAppDispatch();
-
   // Form Submit Handler
   const onSubmit: SubmitHandler<ITask> = (data) => {
     const payload: ITask = {
@@ -58,11 +58,18 @@ export function AddTaskModal() {
     };
     console.log(payload);
     dispatch(addTask(payload));
+    setOpen(false);
+    form.reset();
   };
+
+
+
+
+
 
   // JSX
   return (
-    <Dialog open={false} onOpenChange={() => {}}>
+    <Dialog open={false} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>Add Task</Button>
       </DialogTrigger>
