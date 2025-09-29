@@ -69,7 +69,7 @@ export function AddTaskModal() {
 
   // JSX
   return (
-    <Dialog open={false} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>Add Task</Button>
       </DialogTrigger>
